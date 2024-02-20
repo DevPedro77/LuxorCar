@@ -1,15 +1,15 @@
 $(document).ready(function () {
     $('#carrossel-imagens').slick({
-        autoplay: true, // Adicione a configuração do autoplay aqui
+        autoplay: true,
     });
 
     $('.menu-hamburguer').click(function() {
         $('nav').slideToggle();
-    })
+    });
 
-    $('#telefone').mask('(00) 00000-0000',{
-        placeholder:'(00) 00000-0000'
-    })
+    $('#telefone').mask('(00) 00000-0000', {
+        placeholder: '(00) 00000-0000'
+    });
 
     $('form').validate({
         rules: {
@@ -35,6 +35,7 @@ $(document).ready(function () {
         },
         submitHandler: function(form) {
             // Lógica a ser executada quando o formulário for submetido corretamente
+            form.submit(); // Adiciona esta linha para permitir o envio do formulário
         },
         invalidHandler: function(evento, validador) {
             let camposIncorretos = validador.numberOfInvalids();
@@ -52,6 +53,6 @@ $(document).ready(function () {
 
         $('html, body').animate({
             scrollTop: destino.offset().top
-        }, 1000); // 1000 milissegundos = 1 segundo (pode ajustar conforme necessário)
+        }, 1000);
     });
 });
